@@ -1,0 +1,215 @@
+{
+  "$schema": "http://cyclonedx.org/schema/bom-1.6.schema.json",
+  "specVersion": "1.6",
+  "bomFormat": "CycloneDX",
+  "serialNumber": "urn:uuid:553a1c33-fe3b-4990-9466-190418016ad9",
+  "version": 1,
+  "metadata": {
+    "timestamp": "2024-08-13T13:48:30+02:00",
+    "authors": [
+      {
+        "name": "Jan Hensel",
+        "email": "ceo@dubious.engineering"
+      }
+    ],
+    "tools": [],
+    "component": {
+      "name": "count",
+      "type": "application",
+      "bom-ref": "go:github.com/ja-he/count",
+      "purl": "pkg:github/ja-he/count@v0.1.0",
+      "version": "0.1.0",
+      "authors": [
+        {
+          "name": "Jan Hensel",
+          "bom-ref": "github-user:ja-he",
+          "email": "ceo@dubious.engineering"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "copyright": "Jan Hensel",
+      "components": [
+        {
+          "bom-ref": "go:github.com/ja-he/count/cmd/count",
+          "name": "main",
+          "type": "library",
+          "components": [
+            {
+              "bom-ref": "file:github.com/ja-he/count/cmd/count/main.go",
+              "name": "main.go",
+              "type": "file",
+              "hashes": [
+                {
+                  "alg": "SHA-256",
+                  "content": "be44a23b64b2253e52d012da430b5d7f21bb3d405f0d00f2b784bc699498a487"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "bom-ref": "go:github.com/ja-he/count/internal/cli",
+          "name": "cli",
+          "type": "library",
+          "components": [
+            {
+              "bom-ref": "file:github.com/ja-he/count/internal/cli/bytes_command.go",
+              "name": "bytes_command.go",
+              "type": "file",
+              "hashes": [
+                {
+                  "alg": "SHA-256",
+                  "content": "3e2d2f653c3c941572a93a679acc3869c96cb12cab022223ea884d9ece4ec14c"
+                }
+              ]
+            },
+            {
+              "bom-ref": "file:github.com/ja-he/count/internal/cli/cli.go",
+              "name": "cli.go",
+              "type": "file",
+              "hashes": [
+                {
+                  "alg": "SHA-256",
+                  "content": "dd75857ccb5448eb70d2442667227b0eb6c4f1f59de28ea401c6780f68cc0015"
+                }
+              ]
+            },
+            {
+              "bom-ref": "file:github.com/ja-he/count/internal/cli/with_wc.go",
+              "name": "with_wc.go",
+              "type": "file",
+              "hashes": [
+                {
+                  "alg": "SHA-256",
+                  "content": "2c6a6f15d3f579ea1e2d6f056a78b17643c495f64b4c095ef33de73fd14bd7a0"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "bom-ref": "go:github.com/ja-he/count/internal/wcwrap",
+          "name": "wcwrap",
+          "type": "library",
+          "components": [
+            {
+              "bom-ref": "file:github.com/ja-he/count/internal/wcwrap/wcwrap.go",
+              "type": "file",
+              "name": "wcwrap.go",
+              "hashes": [
+                {
+                  "alg": "SHA-256",
+                  "content": "ccd5262ddc3348ab75a45a727f8d6db71f628edf97f975ff5a30bca31956908c"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "bom-ref": "go:github.com/ja-he/count/internal/count",
+          "name": "count",
+          "type": "library",
+          "components": [
+            {
+              "bom-ref": "file:github.com/ja-he/count/internal/count/count_bytes.go",
+              "name": "count_bytes.go",
+              "type": "file",
+              "hashes": [
+                {
+                  "alg": "SHA-256",
+                  "content": "eb343a7d1e08aa7892401e991a0e3612fa02a45d8fc2fc25d3c8ca2efd0607a6"
+                }
+              ]
+            },
+            {
+              "bom-ref": "file:github.com/ja-he/count/internal/count/count.go",
+              "name": "count.go",
+              "type": "file",
+              "hashes": [
+                {
+                  "alg": "SHA-256",
+                  "content": "c02a1ff2804d98024942373c1f176ea757990de80d48a4096300b43a91c9dc96"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "components": [
+    {
+      "bom-ref": "go:fmt",
+      "name": "fmt",
+      "type": "library"
+    },
+    {
+      "bom-ref": "go:os",
+      "name": "os",
+      "type": "library"
+    },
+    {
+      "bom-ref": "go:github.com/jessevdk/go-flags",
+      "name": "go-flags",
+      "type": "library"
+    },
+    {
+      "bom-ref": "bin:gnu-coreutils-wc",
+      "type": "application",
+      "description": "a GNU coreutils binary file 'wc'",
+      "name": "wc",
+      "authors": [
+        {
+          "name": "Paul Rubin"
+        },
+        {
+          "name": "David MacKenzie"
+        }
+      ],
+      "copyright": "Copyright © 2024 Free Software Foundation, Inc.",
+      "licenses": [
+        {
+          "license": {
+            "id": "GPL-3.0-or-later"
+          }
+        }
+      ]
+    }
+  ],
+  "services": [],
+  "dependencies": [
+    {
+      "ref": "go:github.com/ja-he/count/cmd/count",
+      "dependsOn": [
+        "go:github.com/ja-he/count/internal/cli",
+        "go:github.com/jessevdk/go-flags",
+        "go:os",
+        "go:fmt"
+      ]
+    },
+    {
+      "ref": "go:github.com/ja-he/count/internal/cli",
+      "dependsOn": [
+        "go:github.com/ja-he/count/internal/count",
+        "go:github.com/ja-he/count/internal/wcwrap",
+        "go:os",
+        "go:fmt"
+      ]
+    },
+    {
+      "ref": "go:github.com/ja-he/count/internal/wcwrap",
+      "dependsOn": [
+        "go:io",
+        "go:fmt",
+        "go:os/exec",
+        "bin:gnu-coreutils-wc"
+      ]
+    }
+  ]
+}
