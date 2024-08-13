@@ -12,12 +12,50 @@
         "email": "ceo@dubious.engineering"
       }
     ],
-    "tools": [],
+    "tools": [
+      {
+        "vendor": "CycloneDX",
+        "name": "cyclonedx-gomod",
+        "version": "v1.7.0",
+        "hashes": [
+          {
+            "alg": "MD5",
+            "content": "fb5133f456f1199572c48d695db73a8e"
+          },
+          {
+            "alg": "SHA-1",
+            "content": "b1b43069a3e9b29a3d08eb4b36e83b6d8c35cc77"
+          },
+          {
+            "alg": "SHA-256",
+            "content": "063067390bcbb8d8929307875a29fbccf26034b4444fbcb1c2b0810abd253391"
+          },
+          {
+            "alg": "SHA-384",
+            "content": "22822e7567e5fc094566bdc4f43d2da15bd64b907fdef479d3f48ceba5d619913d2fdfec8bd35e60dc17003bd6b97959"
+          },
+          {
+            "alg": "SHA-512",
+            "content": "c0061988897ba8f26fbe651c6af0c91b56cf2dbcb109572cd60cfd660d5a274b4f0c16b392688f1b867d250d0dd1ef1695359d9ebe532882e7ea572968652015"
+          }
+        ],
+        "externalReferences": [
+          {
+            "url": "https://github.com/CycloneDX/cyclonedx-gomod",
+            "type": "vcs"
+          },
+          {
+            "url": "https://cyclonedx.org",
+            "type": "website"
+          }
+        ]
+      }
+    ],
     "component": {
       "name": "count",
       "type": "application",
-      "bom-ref": "go:github.com/ja-he/count",
-      "purl": "pkg:github/ja-he/count@v0.1.0",
+      "bom-ref": "go/mod:github.com/ja-he/count",
+      "purl": "pkg:github/ja-he/count@v0.1.0?type=module",
       "version": "0.1.0",
       "authors": [
         {
@@ -34,9 +72,15 @@
         }
       ],
       "copyright": "Jan Hensel",
+      "externalReferences": [
+        {
+          "url": "https://github.com/ja-he/count",
+          "type": "vcs"
+        }
+      ],
       "components": [
         {
-          "bom-ref": "go:github.com/ja-he/count/cmd/count",
+          "bom-ref": "go/pkg:github.com/ja-he/count/cmd/count",
           "name": "main",
           "type": "library",
           "components": [
@@ -54,7 +98,7 @@
           ]
         },
         {
-          "bom-ref": "go:github.com/ja-he/count/internal/cli",
+          "bom-ref": "go/pkg:github.com/ja-he/count/internal/cli",
           "name": "cli",
           "type": "library",
           "components": [
@@ -94,7 +138,7 @@
           ]
         },
         {
-          "bom-ref": "go:github.com/ja-he/count/internal/wcwrap",
+          "bom-ref": "go/pkg:github.com/ja-he/count/internal/wcwrap",
           "name": "wcwrap",
           "type": "library",
           "components": [
@@ -112,7 +156,7 @@
           ]
         },
         {
-          "bom-ref": "go:github.com/ja-he/count/internal/count",
+          "bom-ref": "go/pkg:github.com/ja-he/count/internal/count",
           "name": "count",
           "type": "library",
           "components": [
@@ -139,25 +183,537 @@
               ]
             }
           ]
+        },
+        {
+          "bom-ref": "file:github.com/ja-he/count/go.mod",
+          "name": "go.mod",
+          "type": "file",
+          "hashes": [
+            {
+              "alg": "SHA-256",
+              "content": "d43574bb02e314dccbaf1d31a96e6e4b94980cfd39a25489d9fe7789dc19270e"
+            }
+          ]
+        },
+        {
+          "bom-ref": "file:github.com/ja-he/count/go.sum",
+          "name": "go.sum",
+          "type": "file",
+          "hashes": [
+            {
+              "alg": "SHA-256",
+              "content": "c42b96ed2139978f2d322f1c008b57f0ce293ae51139e537566f78a9f59d61fb"
+            }
+          ]
         }
       ]
     }
   },
   "components": [
     {
-      "bom-ref": "go:fmt",
+      "bom-ref": "go/pkg:fmt",
       "name": "fmt",
       "type": "library"
     },
     {
-      "bom-ref": "go:os",
+      "bom-ref": "go/pkg:os",
       "name": "os",
       "type": "library"
     },
     {
-      "bom-ref": "go:github.com/jessevdk/go-flags",
+      "bom-ref": "go/mod:github.com/jessevdk/go-flags",
       "name": "go-flags",
-      "type": "library"
+      "type": "library",
+      "version": "v1.6.1",
+      "scope": "required",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "purl": "pkg:golang/github.com/jessevdk/go-flags@v1.6.1?type=module",
+      "externalReferences": [
+        {
+          "url": "https://github.com/jessevdk/go-flags",
+          "type": "vcs"
+        }
+      ],
+      "components": [
+        {
+          "type": "library",
+          "name": "go-flags",
+          "version": "v1.6.1",
+          "purl": "pkg:golang/github.com/jessevdk/go-flags@v1.6.1?type=package",
+          "components": [
+            {
+              "type": "file",
+              "name": "arg.go",
+              "bom-ref": "file:github.com/jessevdk/go-flags/arg.go",
+              "version": "v0.0.0-9ed9b13828d7",
+              "scope": "required",
+              "hashes": [
+                {
+                  "alg": "MD5",
+                  "content": "9d55242e39727ce34b0359283bda1c34"
+                },
+                {
+                  "alg": "SHA-1",
+                  "content": "9ed9b13828d7fe45a599dd1f66e4b31b8afbefbd"
+                },
+                {
+                  "alg": "SHA-256",
+                  "content": "af9f29f336a407eace61c52ab406141dfaafb577587eaf86aba34df6d98be6ac"
+                },
+                {
+                  "alg": "SHA-384",
+                  "content": "8d8a09f0ec3a473b1ba13d79871e7c171a9c83d16dd32bae55844064621ebda13ded39b81a2c48eb1a7cdd5577810cc4"
+                },
+                {
+                  "alg": "SHA-512",
+                  "content": "2e6679d3e9cb6767b8f854cf9dc00c949a901e25703d5ddd1c26ad581939045d650e4141180b25f765639906fde8f503bdbb85d78a0170bec8c9d2da243ce38d"
+                }
+              ]
+            },
+            {
+              "type": "file",
+              "name": "closest.go",
+              "bom-ref": "file:github.com/jessevdk/go-flags/closest.go",
+              "version": "v0.0.0-29cb5cb21323",
+              "scope": "required",
+              "hashes": [
+                {
+                  "alg": "MD5",
+                  "content": "ea36c1545c8389a40c4f1b27a27b7d23"
+                },
+                {
+                  "alg": "SHA-1",
+                  "content": "29cb5cb213235b22667c5b69e8113ba9c9387da1"
+                },
+                {
+                  "alg": "SHA-256",
+                  "content": "0a7b54124210c437bece52a62d633eb4eaef4125ae1b6a4eba98eabf7d306070"
+                },
+                {
+                  "alg": "SHA-384",
+                  "content": "cf398a777a769a2e0189b234f56a5e056f8e21653d59b2fd67a3c721351cb4fe584122b8f126185e63158d166bb64ad1"
+                },
+                {
+                  "alg": "SHA-512",
+                  "content": "2394801987eead05c0fa3d6e09fa24108d5056549d138d584033cefceda05b83d7cc1de306dbca9bb8ecf9f3b030bbcf1e668a846ef0dbb7fb21d97e18c43679"
+                }
+              ]
+            },
+            {
+              "type": "file",
+              "name": "command.go",
+              "bom-ref": "file:github.com/jessevdk/go-flags/command.go",
+              "version": "v0.0.0-9f7891ed9e42",
+              "scope": "required",
+              "hashes": [
+                {
+                  "alg": "MD5",
+                  "content": "ce023918194a19f8d5caf8e7cbd922ba"
+                },
+                {
+                  "alg": "SHA-1",
+                  "content": "9f7891ed9e42e38d55afac7cd01b1f99a86c81b9"
+                },
+                {
+                  "alg": "SHA-256",
+                  "content": "c1d398eaac418ec3e87ba4aca976cc67a7421213c7c94548a81802a27b8dfac6"
+                },
+                {
+                  "alg": "SHA-384",
+                  "content": "f4a3d76898343acd7dbe59aed9d548ec0da591ae2cac4a6f02a72ea87297d74cbd2585afbe9663b49a1fc9292c6eec52"
+                },
+                {
+                  "alg": "SHA-512",
+                  "content": "5b8fe49e1188670e3266cd7ff40b84441aa342e68ba3e22d08ecc44b7bb67d38c1c7e794c6034cfa4d3cd09e509b7daaece0cbf7ac5a0b76f9f998327e7427d6"
+                }
+              ]
+            },
+            {
+              "type": "file",
+              "name": "completion.go",
+              "bom-ref": "file:github.com/jessevdk/go-flags/completion.go",
+              "version": "v0.0.0-d1f7e519c255",
+              "scope": "required",
+              "hashes": [
+                {
+                  "alg": "MD5",
+                  "content": "99d787e970b0515e937dadab2276ee67"
+                },
+                {
+                  "alg": "SHA-1",
+                  "content": "d1f7e519c255e7ce319b88abf33d1ba25e8b68c8"
+                },
+                {
+                  "alg": "SHA-256",
+                  "content": "94f76e828ebbe5a8fbea55e5c5b0c4f747ed9a4f7e2f8f1aaa01857ed41b9d4a"
+                },
+                {
+                  "alg": "SHA-384",
+                  "content": "7205a589faec91d5282125d3ce82abf7c3875b8c562203c6359507ea9c157617d96887ef4471d543b4dc774a704ecf4e"
+                },
+                {
+                  "alg": "SHA-512",
+                  "content": "17d7d0c5f471efc074db27c76db6b9cc8ff2e8f5dc258a2c07a7b28fd2e5d84f864cfbe7fd77b9667ad18e719ad91be516dc54527afce16cf4c18545ceb5dd7d"
+                }
+              ]
+            },
+            {
+              "type": "file",
+              "name": "convert.go",
+              "bom-ref": "file:github.com/jessevdk/go-flags/convert.go",
+              "version": "v0.0.0-6cd65ffdd528",
+              "scope": "required",
+              "hashes": [
+                {
+                  "alg": "MD5",
+                  "content": "43eab825d5685a9d6647de567d980d3a"
+                },
+                {
+                  "alg": "SHA-1",
+                  "content": "6cd65ffdd52822e97c6c99d9f647a8a558d2d4e2"
+                },
+                {
+                  "alg": "SHA-256",
+                  "content": "2d87f219ad6447a99ebfb8f7e017342d577b778a367dd6dc1eba7bda5d25b405"
+                },
+                {
+                  "alg": "SHA-384",
+                  "content": "bc8686837c73a900e11251554fae1a885afd368966d2740b026b4a29bc96f010f4c50c4cb43321578714c0012e99cd5f"
+                },
+                {
+                  "alg": "SHA-512",
+                  "content": "5b4fdf056e0d3525ba1612309a5abe431448948f3dfa470080813872f556504134da1c9d1a480f21272652ed288c1f4453c7051a9163c466f98c5a5b905d6c53"
+                }
+              ]
+            },
+            {
+              "type": "file",
+              "name": "error.go",
+              "bom-ref": "file:github.com/jessevdk/go-flags/error.go",
+              "version": "v0.0.0-a6fb609a1959",
+              "scope": "required",
+              "hashes": [
+                {
+                  "alg": "MD5",
+                  "content": "21ef6f8f78b29231644f4722a5495ac8"
+                },
+                {
+                  "alg": "SHA-1",
+                  "content": "a6fb609a19593ddb6bbc12eee5a37e82fd4fd58d"
+                },
+                {
+                  "alg": "SHA-256",
+                  "content": "228e088ff2d26f22ee2e70ee525d193108dd585b39f12c950441a44dfb16923a"
+                },
+                {
+                  "alg": "SHA-384",
+                  "content": "4594bb5ed3346f8277b007842a913338f46efc440e97ff66baa11a63ac7afe4e3994a3786af237e3d9d81cd2bb4c9f62"
+                },
+                {
+                  "alg": "SHA-512",
+                  "content": "7ff87a66773c1a64931b7cf7e488916112f07639553693f7ea8927c04cb91df0ca065dd2d9fb6c63336c0a0837e938e3c01ffaa41107d49efaa201a797c5face"
+                }
+              ]
+            },
+            {
+              "type": "file",
+              "name": "flags.go",
+              "bom-ref": "file:github.com/jessevdk/go-flags/flags.go",
+              "version": "v0.0.0-f85dfc5ca477",
+              "scope": "required",
+              "hashes": [
+                {
+                  "alg": "MD5",
+                  "content": "373246a313a2ea40afaf17dd0c8d4c95"
+                },
+                {
+                  "alg": "SHA-1",
+                  "content": "f85dfc5ca477830e708ae505a21f3b6b4889fbad"
+                },
+                {
+                  "alg": "SHA-256",
+                  "content": "62d37bab216faae8570fd7f80c2d34d5d4dafd1c552ffddacbd482befe041e11"
+                },
+                {
+                  "alg": "SHA-384",
+                  "content": "a6eb4a8dd83ec16d1011039edfc55a1e50207b5a94d8ded96328004837f44af76c5e37bd770f34535829c222d557e9f9"
+                },
+                {
+                  "alg": "SHA-512",
+                  "content": "63263db4ab20dfc9bd6553a225b5de31401d580c91b51314085f90dc42ac3512129ec2ac0c5e592ba6697b8813df3999a556b82662b742d75074a1969c023b1d"
+                }
+              ]
+            },
+            {
+              "type": "file",
+              "name": "group.go",
+              "bom-ref": "file:github.com/jessevdk/go-flags/group.go",
+              "version": "v0.0.0-d0fa1ccc23c1",
+              "scope": "required",
+              "hashes": [
+                {
+                  "alg": "MD5",
+                  "content": "34ab5f2c8800dadd24afb6d3ce993605"
+                },
+                {
+                  "alg": "SHA-1",
+                  "content": "d0fa1ccc23c151034b4f5594e6f0d4b9a4084e7c"
+                },
+                {
+                  "alg": "SHA-256",
+                  "content": "1de3affc4f5dad91a7d71248f2fa95c68a7973c07619b56bb1b828dea9ccbb81"
+                },
+                {
+                  "alg": "SHA-384",
+                  "content": "f7d5e91c0f4b12034232101507a9a1eda6703911a01e20d4224c7e5e723f5c23a23b901649e821b2c347dc58041c92c6"
+                },
+                {
+                  "alg": "SHA-512",
+                  "content": "fee1dbfef7517a0500a9ecd1e037cea4dc392cd0e86f570fbd42e89d84da847c26b7b268d557a91224b5d2c9fcf5e8a2652d4cb42e520ed848421c35974511fa"
+                }
+              ]
+            },
+            {
+              "type": "file",
+              "name": "help.go",
+              "bom-ref": "file:github.com/jessevdk/go-flags/help.go",
+              "version": "v0.0.0-dcbfb1c9c72e",
+              "scope": "required",
+              "hashes": [
+                {
+                  "alg": "MD5",
+                  "content": "a633334c40252a5e2d82bda75ff07b77"
+                },
+                {
+                  "alg": "SHA-1",
+                  "content": "dcbfb1c9c72e8af845b9ded83071a92650afe9c6"
+                },
+                {
+                  "alg": "SHA-256",
+                  "content": "2d1ae67f9412543e2d64ba14d01c869b0fd077fd950f754a8df90acb878108dd"
+                },
+                {
+                  "alg": "SHA-384",
+                  "content": "6891357fad3eba351cbcc1276bc9e0f9a567378554009d43ea670069ee7b8b001ac43695b3288ca38a1a5f036e81f67d"
+                },
+                {
+                  "alg": "SHA-512",
+                  "content": "8096a26a8334ea6e44bf568dec532a5aa8b7c6b68c331b7ce322d634a4fa76bd74aa7684c7aca558fa708e878ab55afcc1e4745dac56c019e5ab03d4db27328b"
+                }
+              ]
+            },
+            {
+              "type": "file",
+              "name": "ini.go",
+              "bom-ref": "file:github.com/jessevdk/go-flags/ini.go",
+              "version": "v0.0.0-2d048105385f",
+              "scope": "required",
+              "hashes": [
+                {
+                  "alg": "MD5",
+                  "content": "1e2460916a967689b8e247bb51b3b881"
+                },
+                {
+                  "alg": "SHA-1",
+                  "content": "2d048105385f54009ba5f164202eb3e2b01bbcef"
+                },
+                {
+                  "alg": "SHA-256",
+                  "content": "0e4350b982c9d12ab3ca85a6a5a7bdf953dcedce4dcb802e049fa1163cc5f653"
+                },
+                {
+                  "alg": "SHA-384",
+                  "content": "07069e4c17ca81815166c0ac4ebe1f64acd977b533b223069589b67ff3206bb30f01c133a7cbe455582068ef310c2aed"
+                },
+                {
+                  "alg": "SHA-512",
+                  "content": "a6466759d0f368303ffd31947cd8dd2b652dfb73da03d4e29e24c6d1a9d0664bec149b1ea646e2a485b4b78a20bcc72ea90760c189c81aab90f1b9bc61183246"
+                }
+              ]
+            },
+            {
+              "type": "file",
+              "name": "man.go",
+              "bom-ref": "file:github.com/jessevdk/go-flags/man.go",
+              "version": "v0.0.0-c322a951c271",
+              "scope": "required",
+              "hashes": [
+                {
+                  "alg": "MD5",
+                  "content": "0b8df1a8a67b25cd7ce38bd6d166aa0d"
+                },
+                {
+                  "alg": "SHA-1",
+                  "content": "c322a951c27178aeab9c21485b027cf96ff236df"
+                },
+                {
+                  "alg": "SHA-256",
+                  "content": "5cce64a3edbc735078347e1adeb104ebda83cb71b4cb2797e4a2791c94d2629e"
+                },
+                {
+                  "alg": "SHA-384",
+                  "content": "5afa4800b30af03ff59f406e28b95b57c6e1ac5171e74d0e8ff827fe1810348cb4701cc69984241bdfcdcf7a5a3359e2"
+                },
+                {
+                  "alg": "SHA-512",
+                  "content": "3a6f3c77e06da41f99ad8ad5b2b63522fcfd5f8b18aa5b79a6d46d58ec83395d8f56ef1fac9741cf740293451697e5feb302e17375f3dfd1c97f056ab879eedd"
+                }
+              ]
+            },
+            {
+              "type": "file",
+              "name": "multitag.go",
+              "bom-ref": "file:github.com/jessevdk/go-flags/multitag.go",
+              "version": "v0.0.0-e06608b46878",
+              "scope": "required",
+              "hashes": [
+                {
+                  "alg": "MD5",
+                  "content": "dab1100063034b54c0d64d3a9e6b9ca0"
+                },
+                {
+                  "alg": "SHA-1",
+                  "content": "e06608b468782edea3b22bc3c1d59c8d4c3d3949"
+                },
+                {
+                  "alg": "SHA-256",
+                  "content": "9e3497895583adf716819d182711e6df7d870592e1bc74ab684b2d474c6ab856"
+                },
+                {
+                  "alg": "SHA-384",
+                  "content": "5dadfc0df6a9a6b5522d6b372e86b6fdd3d3be669ccf8eaf2520f994389173a54dceb22df3311948c998d9acf5047425"
+                },
+                {
+                  "alg": "SHA-512",
+                  "content": "bfc235cc63f5d81e7efaf94783baa8f9cf44c2ef78d099088e8bbfd4a2cb4391e691ff5470ddbc2f3f6fe77e3a7ea411242389bcb3736fbd178ed6c736e79c3c"
+                }
+              ]
+            },
+            {
+              "type": "file",
+              "name": "option.go",
+              "bom-ref": "file:github.com/jessevdk/go-flags/option.go",
+              "version": "v0.0.0-f2903b1fa5ef",
+              "scope": "required",
+              "hashes": [
+                {
+                  "alg": "MD5",
+                  "content": "418aeff7f5c76b03f3877a6f2fe90f2d"
+                },
+                {
+                  "alg": "SHA-1",
+                  "content": "f2903b1fa5ef005158f2ea2321d90f4c3a0d6ff1"
+                },
+                {
+                  "alg": "SHA-256",
+                  "content": "ab470910e48a026e293099d5f50ce793b11f8e681e16bd34eb9a3cd83ecde532"
+                },
+                {
+                  "alg": "SHA-384",
+                  "content": "ffa868bbfdcf76a4382a9e0a8b796d055195ed6be98c9f2c4e8a4876cf578aec0f0cecc51a2d10a6ce14c7d7d9ea4d07"
+                },
+                {
+                  "alg": "SHA-512",
+                  "content": "b2c237561be6a4e61292be1e0a375ad367b8d00642c9687e80bc4c7838bf0fa92c65ebf0e587b97904c77eba14dea564568de40671bcc6e8f92f7cc90d608342"
+                }
+              ]
+            },
+            {
+              "type": "file",
+              "name": "optstyle_other.go",
+              "bom-ref": "file:github.com/jessevdk/go-flags/optstyle_other.go",
+              "version": "v0.0.0-3faac4101132",
+              "scope": "required",
+              "hashes": [
+                {
+                  "alg": "MD5",
+                  "content": "0e06fa40b40931ad7e70d2ab15d1ae0a"
+                },
+                {
+                  "alg": "SHA-1",
+                  "content": "3faac41011321698be02a1eecf8a8caf71b7b206"
+                },
+                {
+                  "alg": "SHA-256",
+                  "content": "542b1b1e7f9a4896c13391629147fdf11253f684b887751996599a13283546c1"
+                },
+                {
+                  "alg": "SHA-384",
+                  "content": "c7ca9a06cb032f9adf4b638409c01324e388d0058ddb073f4fa10de7bb763f0528ddbcc99011fc16cb1fe783b6258caa"
+                },
+                {
+                  "alg": "SHA-512",
+                  "content": "b0faa020d42267ec694c591d4d50c5a612c24754dd620fb00aeab6547dc732bf1886fb8ff1d59832d8162172d5592704a208693b0cf9bad6171424eb5df26eb3"
+                }
+              ]
+            },
+            {
+              "type": "file",
+              "name": "parser.go",
+              "bom-ref": "file:github.com/jessevdk/go-flags/parser.go",
+              "version": "v0.0.0-fb7a13183e92",
+              "scope": "required",
+              "hashes": [
+                {
+                  "alg": "MD5",
+                  "content": "338e8ddeaee777db8a0108da73dfba4c"
+                },
+                {
+                  "alg": "SHA-1",
+                  "content": "fb7a13183e92dc0e7c756bf25c494beb9aebcba6"
+                },
+                {
+                  "alg": "SHA-256",
+                  "content": "ee7f8cb83f26fef2737ee01d30c9d7a376e64ce7b7301ba804266b2da1268517"
+                },
+                {
+                  "alg": "SHA-384",
+                  "content": "c493dda912396cd7014a746dda20407b2dcc071ad54cb8f54cc0eebb02c9f509e6c8f271db9bf77fb8da2b9b91b2502f"
+                },
+                {
+                  "alg": "SHA-512",
+                  "content": "2395948a36fb6caeee55af0a197485e25427c6d983428d316b05a29902e6076c4a9a480cd0a45e27e02d218bcffa8d2815e79586abaae596ff8a65e1df06db63"
+                }
+              ]
+            },
+            {
+              "type": "file",
+              "name": "termsize.go",
+              "bom-ref": "file:github.com/jessevdk/go-flags/termsize.go",
+              "version": "v0.0.0-7954a751b4a1",
+              "scope": "required",
+              "hashes": [
+                {
+                  "alg": "MD5",
+                  "content": "0269bf5da42aa933aecd84b5e64126e5"
+                },
+                {
+                  "alg": "SHA-1",
+                  "content": "7954a751b4a115b5fb643a8a029dc36c75ad62cc"
+                },
+                {
+                  "alg": "SHA-256",
+                  "content": "cd665a9943646449f0e0c71757a475bdb4e64625b2ce3c171f6f849c0c2fa895"
+                },
+                {
+                  "alg": "SHA-384",
+                  "content": "fb8e69aedd0e44c13b381aaf64af200b0eb113175f2ce8b6ce3504c3d6bf5c9f9525fb534f6775ba5db99f2450d127f7"
+                },
+                {
+                  "alg": "SHA-512",
+                  "content": "0660763abda993303078da3d462723734d9cc47b0f79d492ba5f80de2be10e498ccee3e9c7d8e558e05ccc76870d6416ab170cd28fbeb582f411d55866bba6b4"
+                }
+              ]
+            }
+          ]
+        }
+      ]
     },
     {
       "bom-ref": "bin:gnu-coreutils-wc",
@@ -185,29 +741,35 @@
   "services": [],
   "dependencies": [
     {
-      "ref": "go:github.com/ja-he/count/cmd/count",
+      "ref": "go/mod:github.com/ja-he/count",
       "dependsOn": [
-        "go:github.com/ja-he/count/internal/cli",
-        "go:github.com/jessevdk/go-flags",
-        "go:os",
-        "go:fmt"
+        "go/mod:github.com/jessevdk/go-flags"
       ]
     },
     {
-      "ref": "go:github.com/ja-he/count/internal/cli",
+      "ref": "go/pkg:github.com/ja-he/count/cmd/count",
       "dependsOn": [
-        "go:github.com/ja-he/count/internal/count",
-        "go:github.com/ja-he/count/internal/wcwrap",
-        "go:os",
-        "go:fmt"
+        "go/pkg:github.com/ja-he/count/internal/cli",
+        "go/pkg:github.com/jessevdk/go-flags",
+        "go/pkg:os",
+        "go/pkg:fmt"
       ]
     },
     {
-      "ref": "go:github.com/ja-he/count/internal/wcwrap",
+      "ref": "go/pkg:github.com/ja-he/count/internal/cli",
       "dependsOn": [
-        "go:io",
-        "go:fmt",
-        "go:os/exec",
+        "go/pkg:github.com/ja-he/count/internal/count",
+        "go/pkg:github.com/ja-he/count/internal/wcwrap",
+        "go/pkg:os",
+        "go/pkg:fmt"
+      ]
+    },
+    {
+      "ref": "go/pkg:github.com/ja-he/count/internal/wcwrap",
+      "dependsOn": [
+        "go/pkg:io",
+        "go/pkg:fmt",
+        "go/pkg:os/exec",
         "bin:gnu-coreutils-wc"
       ]
     }
