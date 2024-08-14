@@ -207,7 +207,14 @@
           ]
         }
       ]
-    }
+    },
+    "licenses": [
+      {
+        "license": {
+          "id": "CC0-1.0"
+        }
+      }
+    ]
   },
   "components": [
     {
