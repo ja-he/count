@@ -55,7 +55,7 @@
       "name": "count",
       "type": "application",
       "bom-ref": "go/mod:github.com/ja-he/count",
-      "purl": "pkg:github/ja-he/count@v0.1.0?type=module",
+      "purl": "pkg:golang/github/ja-he/count@v0.1.0?type=module",
       "version": "0.1.0",
       "authors": [
         {
@@ -83,6 +83,7 @@
           "bom-ref": "go/pkg:github.com/ja-he/count/cmd/count",
           "name": "main",
           "type": "library",
+          "purl": "pkg:golang/github/ja-he/count/cmd/count@v0.1.0?type=package",
           "components": [
             {
               "bom-ref": "file:github.com/ja-he/count/cmd/count/main.go",
@@ -101,6 +102,7 @@
           "bom-ref": "go/pkg:github.com/ja-he/count/internal/cli",
           "name": "cli",
           "type": "library",
+          "purl": "pkg:golang/github/ja-he/count/internal/cli@v0.1.0?type=package",
           "components": [
             {
               "bom-ref": "file:github.com/ja-he/count/internal/cli/bytes_command.go",
@@ -141,6 +143,7 @@
           "bom-ref": "go/pkg:github.com/ja-he/count/internal/wcwrap",
           "name": "wcwrap",
           "type": "library",
+          "purl": "pkg:golang/github/ja-he/count/internal/wcwrap@v0.1.0?type=package",
           "components": [
             {
               "bom-ref": "file:github.com/ja-he/count/internal/wcwrap/wcwrap.go",
@@ -158,6 +161,7 @@
         {
           "bom-ref": "go/pkg:github.com/ja-he/count/internal/count",
           "name": "count",
+          "purl": "pkg:golang/github/ja-he/count/internal/count@v0.1.0?type=package",
           "type": "library",
           "components": [
             {
