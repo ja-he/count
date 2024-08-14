@@ -220,12 +220,26 @@
     {
       "bom-ref": "go/pkg:fmt",
       "name": "fmt",
-      "type": "library"
+      "type": "library",
+      "purl": "pkg:golang/fmt@go1.22.6"
     },
     {
       "bom-ref": "go/pkg:os",
       "name": "os",
-      "type": "library"
+      "type": "library",
+      "purl": "pkg:golang/os@go1.22.6"
+    },
+    {
+      "bom-ref": "go/pkg:os/exec",
+      "name": "os/exec",
+      "type": "library",
+      "purl": "pkg:golang/os/exec@go1.22.6"
+    },
+    {
+      "bom-ref": "go/pkg:io",
+      "name": "io",
+      "type": "library",
+      "purl": "pkg:golang/io@go1.22.6"
     },
     {
       "bom-ref": "go/mod:github.com/jessevdk/go-flags",
@@ -249,6 +263,7 @@
       ],
       "components": [
         {
+          "bom-ref": "go/pkg:github.com/jessevdk/go-flags",
           "type": "library",
           "name": "go-flags",
           "version": "v1.6.1",
