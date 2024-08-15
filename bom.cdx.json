@@ -825,6 +825,50 @@
       "dependsOn": [
         "go/mod:golang.org/x/sys"
       ]
+    },
+    {
+      "ref": "file:github.com/ja-he/count/cmd/count/main.go",
+      "dependsOn": [
+        "go/pkg:fmt",
+        "go/pkg:os",
+        "go/pkg:github.com/jessevdk/go-flags",
+        "go/pkg:github.com/ja-he/count/internal/cli"
+      ]
+    },
+    {
+      "ref": "file:github.com/ja-he/count/internal/count/count.go",
+      "dependsOn": []
+    },
+    {
+      "ref": "file:github.com/ja-he/count/internal/count/count_bytes.go",
+      "dependsOn": [
+        "go/pkg:fmt",
+        "go/pkg:io"
+      ]
+    },
+    {
+      "ref": "file:github.com/ja-he/count/internal/wcwrap/wcwrap.go",
+      "dependsOn": [
+        "go/pkg:fmt",
+        "go/pkg:io",
+        "go/pkg:os/exec"
+      ]
+    },
+    {
+      "ref": "file:github.com/ja-he/count/internal/cli/bytes_command.go",
+      "dependsOn": [
+        "go/pkg:fmt",
+        "go/pkg:os",
+        "go/pkg:github.com/ja-he/count/internal/count"
+      ]
+    },
+    {
+      "ref": "file:github.com/ja-he/count/internal/cli/with_wc.go",
+      "dependsOn": [
+        "go/pkg:fmt",
+        "go/pkg:os",
+        "go/pkg:github.com/ja-he/count/internal/wcwrap"
+      ]
     }
   ]
 }
