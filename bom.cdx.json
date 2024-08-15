@@ -742,6 +742,27 @@
       ]
     },
     {
+      "bom-ref": "go/mod:golang.org/x/sys",
+      "type": "library",
+      "name": "golang.org/x/sys",
+      "version": "v0.21.0",
+      "scope": "required",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "ac5fa9633dc300649003102ed426c2edc6ad660e1e6c2e1421e2212b1059bf0b"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "purl": "pkg:golang/golang.org/x/sys@v0.21.0?type=module"
+    },
+    {
       "bom-ref": "bin:gnu-coreutils-wc",
       "type": "application",
       "description": "a GNU coreutils binary file 'wc'",
@@ -797,6 +818,12 @@
         "go/pkg:fmt",
         "go/pkg:os/exec",
         "bin:gnu-coreutils-wc"
+      ]
+    },
+    {
+      "ref": "go/pkg:github.com/jessevdk/go-flags",
+      "dependsOn": [
+        "go/mod:golang.org/x/sys"
       ]
     }
   ]
